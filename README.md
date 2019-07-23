@@ -1,16 +1,24 @@
-# flutter_slivers
+## Parallax
 
-A new Flutter application.
+![Alt Text](https://media.giphy.com/media/j2Go4RmUVRxShiRsQE/giphy.gif)
 
-## Getting Started
+#### Page Transition
+Using Hero Widget we can meke this page transition! Have to add a tag for that particular Image widget the same tag to be used in next page image to animate by tag.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Parallax
+ To crate toolbar collapsing like above we should use CustomScrollView and have to remove appbar if you added already and mention like below,
+ 
+       SliverAppBar(
+            expandedHeight: 300,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(widget.title),
+              background: Hero(
+                tag: widget.title,
+                child: Image.asset(widget.assetImage),
+              ),
+            ),
+          ),
+          
+  Happie Coding:)        
